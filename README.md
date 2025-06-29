@@ -1,53 +1,49 @@
 ##  FTP Honeypot - Abdullah FTP Trap
 
-A realistic FTP honeypot built using Python and `pyftpdlib`, designed to simulate a legitimate FTP service while logging all attacker actions. This trap supports anonymous access, realistic bait files, and detailed session logging.
+A deceptive yet harmless FTP server built using Python and `pyftpdlib` to simulate a production environment. It logs all intruder activities, supports anonymous login, and presents realistic bait files to encourage engagement.
 
 ---
 
 ## 🔐 Features
 
-* Full FTP server simulation using `pyftpdlib`
-* Anonymous access enabled (with restricted permissions)
-* Realistic bait files (e.g., `secrets.txt`, `emergency_update_required.txt`)
-* Custom login banner for legal warning and realism
-* Detailed logging of:
+* ✅ Anonymous login support (realistic attack scenario)
+* ✅ Simulated file system with planted sensitive files
+* ✅ Logs every session, command, file access, and disconnection
+* ✅ Displays a legal banner message
+* ✅ Easy to set up and run in isolated environments
 
-  * FTP logins
-  * File downloads/uploads
-  * Commands issued
-  * Connections and disconnections
 
 ---
 
 ## 🛠️ Setup Instructions
 
-### 1. 🔧 Install Dependency
+### 1. Install Dependencies
 
 ```bash
 pip install pyftpdlib
 ```
 
-### 2. 🚀 Run the Honeypot
+### 2. Run the FTP Honeypot
 
 ```bash
 sudo python3 ftp_honeypot.py
 ```
 
-> The script runs on port `21` and listens for incoming FTP connections.
+> ⚠️ Run with `sudo` to bind to port 21 (privileged port).
 
 ---
 
-## 🧪 Test Access
+## 🧪 How to Access (Test)
 
-### From Linux:
+### Via Linux FTP Client:
 
 ```bash
 ftp <your-ip>
-# Username: anonymous
-# Password: (press Enter)
+Name: anonymous
+Password: (just press Enter)
 ```
 
-Or using `curl`:
+### Via `curl`:
 
 ```bash
 curl ftp://<your-ip> --user anonymous:
@@ -55,25 +51,28 @@ curl ftp://<your-ip> --user anonymous:
 
 ---
 
-## 🧾 Example Output (Client View)
+## 🧾 Client View Output Example
 
 ```text
 220 Welcome to Abdullah FTP
 This server is for authorized use only. All activity is monitored.
 
 ftp> ls
-200 PORT command successful. Consider using PASV.
-150 Here comes the directory listing.
--rw-r--r--    1 0        0             142 Apr 25 20:19 secrets.txt
--rw-r--r--    1 0        0             345 Apr 25 20:20 emergency_update_required.txt
-226 Directory send OK.
+-rw-r--r--    1 0        0             142 secrets.txt
+-rw-r--r--    1 0        0             345 emergency_update_required.txt
 ```
 
 ---
 
-## 🧠 Disclaimer
+## 📜 License
 
-This project is for **educational and research purposes only**. Deploying a honeypot online may attract real attacks. Ensure you run it in a **safe, isolated environment** and monitor activity responsibly.
+MIT License — free for educational and ethical use.
+
+---
+
+## ⚠️ Disclaimer
+
+This project is for **educational and research purposes only**. Deploy only in secure environments. Misuse of this software is strictly prohibited.
 
 ---
 
@@ -81,4 +80,4 @@ This project is for **educational and research purposes only**. Deploying a hone
 
 **Abdullah Banwair**
 
-Contributions and suggestions are welcome!
+Suggestions, contributions, and pull requests are welcome!

@@ -78,6 +78,6 @@ This project is for **educational and research purposes only**. Deploy only in s
 
 ## 👨‍💻 Author
 
-**Abdullah Banwair**
+Made by [Abdullah Banwair](https://github.com/Rzfn2) — feel free to reach out!
 
 Suggestions, contributions, and pull requests are welcome!
